@@ -1,0 +1,6 @@
+<ul>
+    <li *ngFor="let todo of todos">{{todo}}</li>
+</ul>
+
+<input type="text" #input>
+<button (click)="onAdd(input.value)">Add Todo</button>

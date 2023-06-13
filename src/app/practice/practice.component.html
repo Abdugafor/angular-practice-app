@@ -1,0 +1,18 @@
+<div>
+    <div [ngSwitch]="editMode">   
+      <h1 *ngSwitchCase="false">{{personName}}</h1>
+  
+      <input type="text" *ngSwitchCase="true" [(ngModel)]="personName">
+      
+      <h3 *ngIf="error" class="error">Error! Write your full name!</h3>
+    </div>
+  
+    <div [ngSwitch]="editMode" class="btns">
+      <button *ngSwitchCase="false" (click)="onSwitch()" class="btn">Edit</button>
+      <button *ngSwitchCase="true" (click)="onSave()" class="btn">Save</button>
+    </div>
+</div>
+
+<app-todo></app-todo>
+
+<button (click)="onNavigate()">Go Home</button>
